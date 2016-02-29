@@ -1,9 +1,6 @@
-README.md
-
-Development Environment
+#Development Environment
 
 
-
-> dotfiles
->> .vimrc
->> .bashrc
+###dotfiles
+1. .vimrc
+2. .bashrc
