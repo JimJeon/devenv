@@ -23,32 +23,51 @@ set tabstop=4
 set softtabstop=4
 set expandtab 
 set shiftwidth=4
+set smarttab
 
 
     " fold settings
 set foldenable                      " enable folding
 set foldlevelstart=10               " open most folds by default
 set foldnestmax=10                  " 10 nested fold max
-" space to open/close folds
-nnoremap <space> za
-set foldmethod=indent               " fold is based on indent level
+set foldmethod=marker               " fold is based on marker level
 
+    " fold key mapping
+map <F5> v]}zf<CR>                  " make fold
+map <F6> zc<CR>                     " close fold
+map <F7> zo<CR>                     " open fold
+nnoremap <space> za                 " open all fold
+                                    " space key to open/close fold
 
+    " basic settings
 set showmatch			            " highlight matching parenthesis
 set mouse=a                         " enable mouse
-set ignorecase                      " search both upper and lower
 
 set history=1000                    " remember history for 1000 
 
 set wildmenu                        " visual autocomplete
 set lazyredraw                      " redraw only when we need to
+set laststatus=2
 
 
     " search settings
 set incsearch                       " search as characters are entered
-set hlsearch                        " highlight searches
+set hls                             " highlight searches
+set scs                             " smart case search
+set ignorecase                      " search both upper and lower
 
 
-
-syntax on
+syntax on                           " syntax on
 filetype indent on		            " load specific indent file
+
+    " to use korean
+if $LANG[0]=='k'&&$LANG[1]=='o'
+set fileencoding=korea
+endif
+
+
+set fileencoding=utf-8              " use UTF-8 as default save format
+set encoding=utf-8                  " use UTF-8 as default read format
+set termencoding=euc-kr             " use EUC-KR as terminal format
+
+set nowrap
