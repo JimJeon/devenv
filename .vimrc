@@ -60,14 +60,4 @@ set ignorecase                      " search both upper and lower
 syntax on                           " syntax on
 filetype indent on		            " load specific indent file
 
-    " to use korean
-if $LANG[0]=='k'&&$LANG[1]=='o'
-set fileencoding=korea
-endif
-
-
-set fileencoding=utf-8              " use UTF-8 as default save format
-set encoding=utf-8                  " use UTF-8 as default read format
-set termencoding=euc-kr             " use EUC-KR as terminal format
-
 set nowrap
