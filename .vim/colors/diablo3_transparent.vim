@@ -246,12 +246,12 @@ if &t_Co > 255
   highlight WarningMsg      cterm=bold      ctermbg=236   ctermfg=231
   highlight WildMenu                        ctermbg=16    ctermfg=81
 
-  highlight Normal                          ctermbg=235   ctermfg=231
+  highlight Normal                          ctermbg=none
   highlight Comment                                       ctermfg=248
-  highlight CursorLine      cterm=none      ctermbg=237
+  highlight CursorLine      cterm=none      ctermbg=none
   highlight CursorColumn                    ctermbg=237
   highlight LineNr                          ctermbg=237   ctermfg=252
-  highlight NonText                         ctermbg=237   ctermfg=235
+  highlight NonText                         ctermbg=none
 
   highlight LongLineWarning cterm=underline ctermbg=53    ctermfg=1
 end
