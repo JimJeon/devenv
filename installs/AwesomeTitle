@@ -28,7 +28,7 @@ then
     set expandtab
     set shiftwidth=4
     set softtabstop=4
-    """ | cat >> ./.vimrc
+    """ >> ./.vimrc
 
     pip install -r requirements.txt
     pip install flask-sqlalchemy
@@ -63,7 +63,7 @@ else
     set expandtab
     set shiftwidth=4
     set softtabstop=4
-    """ | cat >> ./.vimrc
+    """ >> ./.vimrc
     
     pip install -r requirements.txt
 
