@@ -1,7 +1,20 @@
 set nocompatible                    " VI iMproved
+filetype off                        " for bundles
+
+    " bundle settings
+set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path
+call vundle#begin()                 " vundle begin
+
+Plugin 'gmarik/Vundle.vim'          " Vundle
+Plugin 'The-NERD-tree'              " Nerd tree
+
+call vundle#end()                   " vundle end
+
+syntax on
+filetype plugin indent on		    " load specific indent file
+                                    " enable plugin indent
 
 colorscheme diablo3
-
 
 	" UI settings
 set number			                " enable line number
@@ -10,7 +23,7 @@ set cursorline			            " highlight current line
 set title		        	        " enable title
 set titleold=Virregular		        " custom title
 set ruler                           " show the location of cursor
-
+set t_Co=256                        " 256 colors in vim
 
 	" indent settings
 set autoindent			            " enable autoindent
@@ -21,43 +34,29 @@ set smartindent			            " enable smartindent
 	" tab settings
 set tabstop=4
 set softtabstop=4
-set expandtab 
+set expandtab                       " make tabs to be spaces
 set shiftwidth=4
-set smarttab
 
 
     " fold settings
 set foldenable                      " enable folding
 set foldlevelstart=10               " open most folds by default
 set foldnestmax=10                  " 10 nested fold max
-set foldmethod=marker               " fold is based on marker level
+" space to open/close folds
+nnoremap <space> za
+set foldmethod=indent               " fold is based on indent level
 
-    " fold key mapping
-map <F5> v]}zf<CR>                  " make fold
-map <F6> zc<CR>                     " close fold
-map <F7> zo<CR>                     " open fold
-nnoremap <space> za                 " open all fold
-                                    " space key to open/close fold
 
-    " basic settings
 set showmatch			            " highlight matching parenthesis
 set mouse=a                         " enable mouse
+set ignorecase                      " search both upper and lower
 
 set history=1000                    " remember history for 1000 
 
 set wildmenu                        " visual autocomplete
 set lazyredraw                      " redraw only when we need to
-set laststatus=2
 
 
     " search settings
 set incsearch                       " search as characters are entered
-set hls                             " highlight searches
-set scs                             " smart case search
-set ignorecase                      " search both upper and lower
-
-
-syntax on                           " syntax on
-filetype indent on		            " load specific indent file
-
-set nowrap
+set hlsearch                        " highlight searches
