@@ -1,6 +1,6 @@
 #!/bin/bash
 
-vimrc="./.vimrc"
+vimrc=$HOME"/.vimrc"
 bak_flag=0
 
 if [ -f $vimrc ]
@@ -10,7 +10,7 @@ then
 
     read input
 
-    if [ "$input" == "y" ]
+    if [ "$input" == "y" ] || [ "$input" == "Y" ]
     then
         echo "making backup file..."
         mv ~/.vimrc ~/.vimrc.bak
@@ -32,13 +32,13 @@ then
     fi
 fi
 
-if [ bak_flag ]
+if [ $bak_flag == 1 ]
 then
     echo "Your backup file is in ~/.vimrc.bak"
 fi
-echo "installation completed"
 
 cp -r ./.vim ~/
 cp ./.vimrc ~/
 
+echo "installation completed"
 exit 0
