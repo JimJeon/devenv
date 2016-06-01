@@ -3,29 +3,38 @@
 vimrc=$HOME"/.vimrc"
 bak_flag=0
 
+echo "
+*************** Virregular ***************
+*
+* Virregular installation started
+* Virregular has Vundle and other Bundles
+* Git required to install Vundle
+"
+
+
 if [ -f $vimrc ]
 then
-    echo "Another vimrc is already installed"
-    echo "Do you want to make a backup file for original file? (y/n)"
+    echo "* Another vimrc is already installed"
+    echo "* Do you want to make a backup file for original file? (y/n)"
 
     read input
 
     if [ "$input" == "y" ] || [ "$input" == "Y" ]
     then
-        echo "making backup file..."
+        echo "* making backup file..."
         mv ~/.vimrc ~/.vimrc.bak
-        echo "done"
+        echo "** done"
         bak_flag=1
     else
-        echo "Do you want to delete original file? y for delete, n for quit. (y/n)"
+        echo "* Do you want to delete original file? y for delete, n for quit. (y/n)"
 
         read input
 
         if [ "$input" == "y" ]
         then
-            echo "deleting original file..."
+            echo "* deleting original file..."
             rm -f ~/.vimrc
-            echo "done"
+            echo "** done"
         else
             exit 0
         fi
@@ -34,11 +43,11 @@ fi
 
 if [ $bak_flag == 1 ]
 then
-    echo "Your backup file is in ~/.vimrc.bak"
+    echo "* Your backup file is in ~/.vimrc.bak"
 fi
 
 cp -r ./.vim ~/
 cp ./.vimrc ~/
 
-echo "installation completed"
+echo "* installation completed"
 exit 0
