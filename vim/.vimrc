@@ -47,7 +47,7 @@ nnoremap <space> za
 set foldmethod=indent               " fold is based on indent level
 
 
-set showmatch			            " highlight matching parenthesis
+set showmatch			    " highlight matching parenthesis
 set mouse=a                         " enable mouse
 set ignorecase                      " search both upper and lower
 
