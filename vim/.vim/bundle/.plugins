@@ -1,0 +1,17 @@
+    " bundle settings
+set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path
+call vundle#begin()                 " vundle begin
+
+Plugin 'gmarik/Vundle.vim'          " Vundle
+Plugin 'scrooloose/nerdtree'        " The NERD tree
+Plugin 'taglist.vim'                " taglist
+Plugin 'scrooloose/syntastic'       " syntax checker
+Plugin 'valloric/youcompleteme'     " autocompletion
+Plugin 'tpope/vim-sensible'         " defaults everyone can agree on
+Plugin 'majutsushi/tagbar'          " Tagbar
+Plugin 'sirver/ultisnips'           " Snips for vim
+Plugin 'sheerun/vim-polyglot'       " Polyglot
+
+call vundle#end()                   " vundle end
+
+let g:ycm_server_python_interpreter = '/usr/bin/python3'

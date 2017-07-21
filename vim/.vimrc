@@ -1,20 +1,13 @@
 set nocompatible                    " VI iMproved
 filetype off                        " for bundles
 
-    " bundle settings
-set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path
-call vundle#begin()                 " vundle begin
-
-Plugin 'gmarik/Vundle.vim'          " Vundle
-Plugin 'The-NERD-tree'              " Nerd tree
-
-call vundle#end()                   " vundle end
+source ~/.vim/bundle/.plugins       " load plugins with Vundle
 
 syntax on
 filetype plugin indent on		    " load specific indent file
                                     " enable plugin indent
 
-colorscheme diablo3
+colorscheme diablo3_transparent
 
 	" UI settings
 set number			                " enable line number
@@ -47,7 +40,7 @@ nnoremap <space> za
 set foldmethod=indent               " fold is based on indent level
 
 
-set showmatch			    " highlight matching parenthesis
+set showmatch			            " highlight matching parenthesis
 set mouse=a                         " enable mouse
 set ignorecase                      " search both upper and lower
 
@@ -60,3 +53,6 @@ set lazyredraw                      " redraw only when we need to
     " search settings
 set incsearch                       " search as characters are entered
 set hlsearch                        " highlight searches
+
+    " tmux settings
+set term=screen-256color
