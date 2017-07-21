@@ -2,19 +2,16 @@
 
 bak_flag=0
 
-if [[ -f $HOME/.vimrc ]]; then
-    echo "Another vimrc is already installed"
-    echo "Do you want to make a backup file for original file? (Y/n)"
+if [[ -f $HOME/.tmux.conf ]]; then
+    echo "Another tmux.conf already exists"
+    echo "Do you want to make backup file for original? (Y/n)"
 
     input="Y"
     read input
 
     if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
         echo "making backup file..."
-        mv ~/.vimrc ~/.vimrc~
-        if [[ -d $HOME/.vim ]]; then
-            mv ~/.vim ~/.vim~
-        fi
+        mv ~/.tmux.conf ~/.tmux.conf~
         echo "done"
         bak_flag=1
     else
@@ -22,13 +19,10 @@ if [[ -f $HOME/.vimrc ]]; then
 
         input="N"
         read input
-
+        
         if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
             echo "deleting original file..."
-            rm ~/.vimrc
-            if [[ -d $HOME/.bash ]]; then
-                rm -r ~/.vim
-            fi
+            rm -f ~/.tmux.conf
             echo "done"
         else
             exit 0
@@ -37,11 +31,10 @@ if [[ -f $HOME/.vimrc ]]; then
 fi
 
 if [[ $bak_flag == 1 ]]; then
-    echo "Your backup file is in ~/.vimrc~"
+    echo "Your backup file is in ~/.tmux.conf~"
 fi
 
-cp -r ./.vim ~/
-cp ./.vimrc ~/
+cp ./.tmux.conf ~/
 
 echo "installation completed"
 exit 0

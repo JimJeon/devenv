@@ -2,8 +2,8 @@
 
 bak_flag=0
 
-if [[ -f $HOME/.vimrc ]]; then
-    echo "Another vimrc is already installed"
+if [[ -f $HOME/.bashrc ]]; then
+    echo "Another bashrc is already installed"
     echo "Do you want to make a backup file for original file? (Y/n)"
 
     input="Y"
@@ -11,9 +11,9 @@ if [[ -f $HOME/.vimrc ]]; then
 
     if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
         echo "making backup file..."
-        mv ~/.vimrc ~/.vimrc~
-        if [[ -d $HOME/.vim ]]; then
-            mv ~/.vim ~/.vim~
+        mv ~/.bashrc ~/.bashrc~
+        if [[ -d $HOME/.bash ]]; then
+            mv ~/.bash ~/.bash~
         fi
         echo "done"
         bak_flag=1
@@ -23,11 +23,12 @@ if [[ -f $HOME/.vimrc ]]; then
         input="N"
         read input
 
-        if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+        if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]
+        then
             echo "deleting original file..."
-            rm ~/.vimrc
+            rm ~/.bashrc
             if [[ -d $HOME/.bash ]]; then
-                rm -r ~/.vim
+                rm -r ~/.bash
             fi
             echo "done"
         else
@@ -37,11 +38,11 @@ if [[ -f $HOME/.vimrc ]]; then
 fi
 
 if [[ $bak_flag == 1 ]]; then
-    echo "Your backup file is in ~/.vimrc~"
+    echo "Your backup file is in ~/.bashrc~"
 fi
 
-cp -r ./.vim ~/
-cp ./.vimrc ~/
+cp -r ./.bash ~/
+cp ./.bashrc ~/
 
 echo "installation completed"
 exit 0
