@@ -9,7 +9,7 @@ if [[ -f $HOME/.tmux.conf ]]; then
     input="Y"
     read input
 
-    if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+    if [[ $input =~ ^(y|Y)(es)?$ ]]; then
         echo "making backup file..."
         mv ~/.tmux.conf ~/.tmux.conf~
         echo "done"
@@ -20,7 +20,7 @@ if [[ -f $HOME/.tmux.conf ]]; then
         input="N"
         read input
         
-        if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+        if [[ $input =~ ^(y|Y)(es)?$ ]]; then
             echo "deleting original file..."
             rm -f ~/.tmux.conf
             echo "done"

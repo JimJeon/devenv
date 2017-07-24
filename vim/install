@@ -9,7 +9,7 @@ if [[ -f $HOME/.vimrc ]]; then
     input="Y"
     read input
 
-    if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+    if [[ $input =~ ^(y|Y)(es)?$ ]]; then
         echo "making backup file..."
         mv ~/.vimrc ~/.vimrc~
         if [[ -d $HOME/.vim ]]; then
@@ -23,7 +23,7 @@ if [[ -f $HOME/.vimrc ]]; then
         input="N"
         read input
 
-        if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+        if [[ $input =~ ^(y|Y)(es)?$ ]]; then
             echo "deleting original file..."
             rm ~/.vimrc
             if [[ -d $HOME/.bash ]]; then

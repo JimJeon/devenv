@@ -9,7 +9,7 @@ if [[ -f $HOME/.bashrc ]]; then
     input="Y"
     read input
 
-    if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]; then
+    if [[ $input =~ ^(y|Y)(es)?$ ]]; then
         echo "making backup file..."
         mv ~/.bashrc ~/.bashrc~
         if [[ -d $HOME/.bash ]]; then
@@ -23,8 +23,7 @@ if [[ -f $HOME/.bashrc ]]; then
         input="N"
         read input
 
-        if [[ $input =~ "^y(es)?$" || $input =~ "^Y(ES)?$" ]]
-        then
+        if [[ $input =~ ^(y|Y)(es)?$ ]]; then
             echo "deleting original file..."
             rm ~/.bashrc
             if [[ -d $HOME/.bash ]]; then
