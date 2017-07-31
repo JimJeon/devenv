@@ -44,4 +44,15 @@ cp -r ./.vim ~/
 cp ./.vimrc ~/
 
 echo "installation completed"
+
+if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
+    echo "Do you want to install Vundle.vim? (Y/n)"
+    input="Y"
+    read input
+
+    if [[ $input =~ ^(y|Y)(es)?$ ]]; then
+        command -v git >/dev/null 2>&1 || { echo >&2 "There is no git. Please install."; exit 1; }
+        command git clone https://github.com/Vundle/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
+    fi
+fi
 exit 0
