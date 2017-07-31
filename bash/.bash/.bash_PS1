@@ -153,12 +153,12 @@ else
             # PWD (with 'disk space' info):
             PS1=${PS1}"\[\$(disk_color)\]\W]\[${NC}\] "
             # Prompt (with 'job' info):
-            PS1=${PS1}"\[\$(job_color)\]$\[${NC}\] "
+            PS1=${PS1}"\[\$(job_color)\]\n$\[${NC}\] "
             # Set title of current xterm:
             PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
             ;;
         *)
-            PS1="(\A \u@\h \W) $ " # --> PS1="(\A \u@\h \w) > "
+            PS1="(\A \u@\h \W)\n $ " # --> PS1="(\A \u@\h \w) > "
                                    # --> Shows full pathname of current dir.
             ;;
     esac
